@@ -1,3 +1,18 @@
+spring:
+  main:
+    banner-mode: off
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+---
+server:
+  port: ${SERVER-PORT:8888}
+---
 eureka:
   instance:
     appname: gateway-service
@@ -5,12 +20,3 @@ eureka:
     service-url:
       defaultZone: ${EUREKA-DEFAULT-ZONE:http://localhost:8761/eureka}
     register-with-eureka: true
-spring:
-  cloud:
-    gateway:
-      discovery:
-        locator:
-          enabled: true
-          lower-case-service-id: true
-  application:
-    name: gateway-service

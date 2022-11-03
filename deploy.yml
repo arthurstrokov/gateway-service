@@ -21,6 +21,8 @@ spec:
           image: arthurstrokov/gateway-service:v0.0.0
           imagePullPolicy: IfNotPresent
           env:
+            - name: SERVER-PORT
+              value: "8080"
             - name: EUREKA-DEFAULT-ZONE
               value: "http://192.168.59.106:30001/eureka"
             - name: EUREKA-INSTANCE-HOSTNAME
